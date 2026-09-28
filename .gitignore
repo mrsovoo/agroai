@@ -1,0 +1,51 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+venv/
+.venv/
+env/
+
+# AgroAI runtime data (generated, not source)
+data/database/*.db
+data/database/*.db-journal
+data/database/*.db-wal
+data/database/*.db-shm
+data/indexes/*
+data/documents/*
+!data/database/.gitkeep
+!data/documents/.gitkeep
+!data/indexes/.gitkeep
+
+# Local model weights: large files that are never committed.
+models/*
+!models/README.md
+
+# Generated datasets: rebuild them from the knowledge base when needed.
+datasets/*
+!datasets/README.md
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/next-env.d.ts
+web/*.tsbuildinfo

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agroai"
+version = "0.1.0"
+description = "AgroAI - offline-first agricultural and veterinary AI assistant (knowledge base + RAG agent engine, foundation phase)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "AgroAI" }]
+keywords = ["agriculture", "livestock", "veterinary", "rag", "offline", "llm", "uzbekistan"]
+
+# The core is intentionally dependency-free so it runs fully offline.
+# Optional providers are declared as extras and are only needed in later phases.
+dependencies = []
+
+[project.optional-dependencies]
+# PDF document extraction (future ingestion phase).
+pdf = ["pypdf>=4.0"]
+# Local embedding models (future semantic retrieval).
+embeddings = ["numpy>=1.24"]
+# Development / testing.
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+agroai = "agroai.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["agroai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

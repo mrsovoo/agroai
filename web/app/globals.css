@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+  ::selection {
+    @apply bg-leaf-200 dark:bg-leaf-800;
+  }
+}
+
+/* Readable markdown answers inside assistant bubbles */
+.answer-md {
+  @apply text-[15px] leading-relaxed;
+}
+.answer-md > * + * {
+  @apply mt-3;
+}
+.answer-md h1,
+.answer-md h2,
+.answer-md h3 {
+  @apply font-semibold text-soil-900 dark:text-soil-50;
+}
+.answer-md h1 {
+  @apply text-lg;
+}
+.answer-md h2 {
+  @apply text-base;
+}
+.answer-md ul,
+.answer-md ol {
+  @apply ml-5 space-y-1;
+}
+.answer-md ul {
+  @apply list-disc;
+}
+.answer-md ol {
+  @apply list-decimal;
+}
+.answer-md table {
+  @apply w-full border-collapse text-sm;
+}
+.answer-md th,
+.answer-md td {
+  @apply border border-soil-200 px-2 py-1 text-left dark:border-soil-700;
+}
+.answer-md th {
+  @apply bg-soil-100 font-medium dark:bg-soil-800;
+}
+.answer-md code {
+  @apply rounded bg-soil-100 px-1 py-0.5 font-mono text-[13px] dark:bg-soil-800;
+}
+.answer-md pre {
+  @apply overflow-x-auto rounded-lg bg-soil-900 p-3 text-[13px] text-soil-100;
+}
+.answer-md pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+.answer-md a {
+  @apply text-leaf-700 underline decoration-leaf-300 underline-offset-2 dark:text-leaf-300;
+}
+.answer-md blockquote {
+  @apply border-l-4 border-leaf-300 pl-3 text-soil-600 dark:text-soil-300;
+}
